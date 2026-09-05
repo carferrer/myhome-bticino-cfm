@@ -120,7 +120,12 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
     manufacturer_value = hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].manufacturer
     if isinstance(manufacturer_value, list):
-        manufacturer_value = manufacturer_value[0]  # BTicino
+        manufacturer_value = manufacturer_value[0]  # Si es un dict o lista solo da el primer valor, sino el valor.
+
+    sw_version_value = hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].firmware
+    if isinstance(sw_version_value, list):
+        sw_version_value = sw_version_value[0]  # Si es un dict o lista solo da el primer valor, sino el valor.
+    
     
     gateway_device_entry = device_registry.async_get_or_create(
         config_entry_id=entry.entry_id,
@@ -131,7 +136,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         manufacturer=manufacturer_value,
         name=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].name,
         model=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].model,
-        sw_version=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].firmware,
+        sw_version=sw_version_value,
     )
 
     await hass.config_entries.async_forward_entry_setups(
