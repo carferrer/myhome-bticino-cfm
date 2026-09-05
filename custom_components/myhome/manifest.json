@@ -1,0 +1,71 @@
+{
+  "domain": "myhome",
+  "name": "MyHOME",
+  "codeowners": [
+    "@anotherjulien"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/carferrer/MyHOME",
+  "integration_type": "hub",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/carferrer/MyHOME/issues",
+  "requirements": ["git+https://github.com/carferrer/myhome-OWNd.git#OWNd==0.7.50"],
+  "ssdp": [
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "HL4684"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "AM4890"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "MyHomeServer1"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "F455"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "F454"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "F453AV"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "F452"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "MH200N"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "MH200"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "MH202"
+    },
+    {
+      "st": "upnp:rootdevice",
+      "manufacturer": "BTicino S.p.A.",
+      "modelName": "MH201"
+    }
+  ],
+  "version": "2026.09.02"
+}

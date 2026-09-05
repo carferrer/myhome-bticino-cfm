@@ -1,0 +1,34 @@
+sync_time:
+  name: Syncronize time
+  description: Syncronize gateway's time to HA local time.
+  fields:
+    gateway:
+      name: Gateway
+      description: The gateway's MAC address, as present in the config.
+      example: 00:03:50:00:00:00
+
+send_message:
+  name: Send message
+  description: Send an arbitrary (but valid) OpenWebNet message to the gateway.
+  fields:
+    gateway:
+      name: Gateway
+      description: The gateway's MAC address, as present in the config.
+      example: 00:03:50:00:00:00
+    message:
+      name: Message
+      description: Valid OpenWebNet message.
+      example: "*1*0*0##"
+
+start_sending_instant_power:
+  name: Start sending instant power
+  description: Get automatic instant power draw updates for a sensor.
+  fields:
+    entity_id:
+      name: Entity
+      description: Name(s) of entities that will start sending instant power information.
+      example: "sensor.general_power"
+    duration:
+      name: Duration
+      description: For how long the instant power information will be sent.
+      example: "60"
