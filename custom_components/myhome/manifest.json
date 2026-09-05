@@ -2,7 +2,7 @@
   "domain": "myhome",
   "name": "MyHOME",
   "codeowners": [
-    "@anotherjulien"
+    "@carferrer"
   ],
   "config_flow": true,
   "documentation": "https://github.com/carferrer/MyHOME",
