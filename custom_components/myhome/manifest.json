@@ -9,7 +9,7 @@
   "integration_type": "hub",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/carferrer/MyHOME/issues",
-  "requirements": ["git+https://github.com/carferrer/myhome-OWNd.git#OWNd==2026.09.02"],
+  "requirements": ["OWNd==0.7.48"],
   "ssdp": [
     {
       "st": "upnp:rootdevice",
@@ -67,5 +67,5 @@
       "modelName": "MH201"
     }
   ],
-  "version": "2026.09.07"
+  "version": "2026.09.08"
 }
