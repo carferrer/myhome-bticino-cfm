@@ -1,5 +1,5 @@
 # MyHOME
-MyHOME integration for Home-Assistant
+MyHOME-bticino integration for Home-Assistant
 
 ## Installation
 The integration is able to install the gateway via the Home-Assistant graphical user interface, configuring the different devices needs to be done in YAML files however.
