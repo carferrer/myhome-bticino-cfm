@@ -9,7 +9,7 @@
   "integration_type": "hub",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/carferrer/MyHOME/issues",
-  "requirements": ["git+https://github.com/carferrer/myhome-OWNd.git#OWNd==2026.09.01"],
+  "requirements": ["git+https://github.com/carferrer/myhome-OWNd.git#OWNd==0.7.50"],
   "ssdp": [
     {
       "st": "upnp:rootdevice",
