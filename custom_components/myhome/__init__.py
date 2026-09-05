@@ -118,13 +118,17 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     entity_registry = er.async_get(hass)
     device_registry = dr.async_get(hass)
 
+    manufacturer_value = hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].manufacturer
+    if isinstance(manufacturer_value, list):
+        manufacturer_value = manufacturer_value[0]  # BTicino
+    
     gateway_device_entry = device_registry.async_get_or_create(
         config_entry_id=entry.entry_id,
         connections={(dr.CONNECTION_NETWORK_MAC, entry.data[CONF_MAC])},
         identifiers={
             (DOMAIN, hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].unique_id)
         },
-        manufacturer=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].manufacturer,
+        manufacturer=manufacturer_value,
         name=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].name,
         model=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].model,
         sw_version=hass.data[DOMAIN][entry.data[CONF_MAC]][CONF_ENTITY].firmware,
