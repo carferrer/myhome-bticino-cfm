@@ -40,14 +40,19 @@ class MyHOMEEntity(Entity):
         self._attr_entity_registry_enabled_default = True
         self._attr_should_poll = False
 
-        from homeassistant.helpers.device_registry import DeviceInfo
+        from homeassistant.helpers import device_registry as dr
 
-        self._attr_device_info = DeviceInfo(
+        dev_reg = dr.async_get(hass)
+        gateway_device = dev_reg.async_get_device_by_identifier(
+            DOMAIN, gateway.unique_id
+        )
+
+        self._attr_device_info = dr.DeviceInfo(
             identifiers={(DOMAIN, f"{gateway.mac}-{self._device_id}")},
             name=name,
             manufacturer=self._manufacturer,
             model=self._model,
-            via_device=(DOMAIN, self._gateway_handler.unique_id),
+            via_device_id=gateway_device.id if gateway_device else None,
         )
 
     async def async_added_to_hass(self):
