@@ -1,6 +1,8 @@
 # MyHOME
 MyHOME-bticino integration for Home-Assistant modificado por @carferrer
 
+Original proyect https://github.com/anotherjulien/MyHOME/issues from https://github.com/anotherjulien
+
 ## Installation
 The integration is able to install the gateway via the Home-Assistant graphical user interface, configuring the different devices needs to be done in YAML files however.
 
