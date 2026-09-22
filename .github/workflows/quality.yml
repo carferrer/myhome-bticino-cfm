@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Ruff
-        uses: astral-sh/ruff-action@v4
+        uses: astral-sh/ruff-action@v4.1.0
         with:
           args: check --output-format=github custom_components/myhome tests
 
